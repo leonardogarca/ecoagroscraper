@@ -36,7 +36,7 @@ def downloadXlsBackup(cetip, id):
         out.write(response.content)
 
 def cleanTable(df):
-    df["Data"] = df['Data'].str.replace('.','/')
+    df["Data"] = df['Data'].str.replace('.','/', regex=False)
     df["Data"] = df['Data'].str[3:6] + df['Data'].str[0:3] + df['Data'].str[6:]
     df = df.loc[::-1].reset_index(drop=True)
     return df
