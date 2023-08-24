@@ -47,7 +47,7 @@ def getId(cetip):
     soup = BeautifulSoup(response.text, 'html.parser')
 
     elements = soup.find_all(attrs={"data-id":True})
-    if len(elements) > 1:
+    if len(elements) != 1:
         print("deu ruim")
         return
     else:
